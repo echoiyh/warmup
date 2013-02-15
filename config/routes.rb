@@ -1,18 +1,11 @@
 Warmup::Application.routes.draw do
-
-  get "users/login"
     
-  get "users/add"
+    match 'TESTAPI/resetFixture', :to => 'testapi#resetFixture', :via=>:post, :defaults => { :format => 'json' }
+    match 'TESTAPI/unitTests', :to => 'testapi#unitTests', :via=>:post, :defaults => { :format => 'json' }
+    match 'users/login', :to => 'users#login', :via=>:post, :defaults => { :format => 'json' }
+    match 'users/add', :to => 'users#add', :via=>:post, :defaults => { :format => 'json' }
     
-  post "testapi/resetFixture"
-
-  post "testapi/unitTests"
-
-  post "users/login"
-
-  post "users/add"
-    
-  resources :users
+    resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

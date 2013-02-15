@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     
   def login
-      @data = Users.login(params[:user], params[:password])
+      @data = User.login(params[:user], params[:password])
       
       respond_to do |format|
           #format.html
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def add
-      @data = Users.add(params[:user], params[:password])
+      @data = User.add(params[:user], params[:password])
       
       respond_to do |format|
           #format.html
