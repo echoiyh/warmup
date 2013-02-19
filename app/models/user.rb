@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
         if loginUser
             loginUser.count = loginUser.count + 1
             loginUser.save
-            data = {:errCode => SUCCESS}
+            data = {:count => loginUser.count, :errCode => SUCCESS}
         else
             data = {:errCode => ERR_BAD_CREDENTIALS}
         end

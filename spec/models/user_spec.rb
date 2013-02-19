@@ -53,7 +53,7 @@ describe User do
         it "response should be 1" do
             User.add("eric", "test")
             data = User.login("eric", "test")
-            data.should eql({:errCode => 1})
+            data.should eql({:errCode => 1, :count => 2})
         end
     end
     describe "Adding two different user" do
@@ -62,8 +62,8 @@ describe User do
             User.add("secondEric", "testtest")
             data1 = User.login("eric", "test")
             data2 = User.login("secondEric", "testtest")
-            data1.should eql({:errCode => 1})
-            data2.should eql({:errCode => 1})
+            data1.should eql({:errCode => 1, :count => 2})
+            data2.should eql({:errCode => 1, :count => 2})
         end
     end
     describe "Increment count" do

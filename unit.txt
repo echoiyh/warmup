@@ -1,4 +1,4 @@
 ..........
 
-Finished in 0.09722 seconds
+Finished in 0.09856 seconds
 10 examples, 0 failures
